@@ -2,7 +2,7 @@
 
 ## 
 
-1. ## Identificación de Stakeholders
+ ## 1. Identificación de Stakeholders
 
 | Stakeholder | Rol | Lo que puede aportar |
 | ----- | :---: | :---: |
@@ -15,7 +15,7 @@
 | Usuarios de prueba | Usuario de prueba | Opiniones sobre facilidad de uso, funcionamiento y experiencia con el simulador  |
 | Docente director del proyecto | Asesor / supervisor  | Orientación académica, revisión del proyecto y cumplimiento de objetivo  |
 
-2. ## Definición roles de equipo
+ ## 2. Definición roles de equipo
 
 | Rol | Persona | Responsabilidad principal en este proyecto |
 | :---: | :---: | :---: |
@@ -24,7 +24,7 @@
 | Scrum Master | Alejandra | Facilitar ceremonias, eliminar impedimentos |
 | Development Team | Todos | Estimar, desarrollar, probar |
 
-3. ## Preparación guía de entrevista
+ ## 3. Preparación guía de entrevista
 
 Escribe una guía de entrevista para el stakeholder principal de tu proyecto. Incluye al menos:
 
@@ -52,7 +52,7 @@ Escribe una guía de entrevista para el stakeholder principal de tu proyecto. In
   ¿Hay alguna regla de tránsito o aspecto clave para el proyecto que no hayamos mencionado y que consideres indispensable incluir en este proyecto?  
   R/ El uso anticipado de las direccionales antes de realizar un giro o cambio de carril. En la práctica real muchos estudiantes olvidan señalizar la maniobra antes de accionar el volante, y sería clave que el simulador valide que se active la direccional antes de registrar el giro.
 
-4. ## Conducción de la entrevista y escritura del acta
+ ## 4. Conducción de la entrevista y escritura del acta
 
 ```
 ACTA DE ELICITACIÓN
@@ -88,7 +88,7 @@ REQUISITOS LATENTES DESCUBIERTOS:
 - Pausa automática y retención de estado ante interrupciones de señal Wi-Fi.
 ```
 
-5. ## Historias de usuario y criterios de aceptación
+ ## 5. Historias de usuario y criterios de aceptación
 
 **HU-01: Interacción mediante control físico**
 
@@ -312,7 +312,7 @@ Estructura Jerárquica del Backlog:
          └── Tarea técnica: Vista detallada del historial de sesiones y evolución del alumno
 ```
 
-Tabla del Product Backlog Priorizado:
+## Tabla del Product Backlog Priorizado:
 
 | ID | Historia de Usuario | Prioridad | Justificación de Negocio / Técnica |
 | :---- | :---- | :---- | :---- |
