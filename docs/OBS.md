@@ -1,3 +1,4 @@
+```
 @startwbs
 skinparam defaultTextAlignment center
 * Proyecto: Simulador de Conducción Inteligente con IA
@@ -22,5 +23,6 @@ skinparam defaultTextAlignment center
 **** **Joan Villamil**: Base de Datos y Buscador Histórico (1.2, 3.3)
 **** **Alejandra Osorio**: Motor de Recomendaciones en BD (4.3)
 @endwbs
+```
 
 Se revisa en https://www.planttext.com/
