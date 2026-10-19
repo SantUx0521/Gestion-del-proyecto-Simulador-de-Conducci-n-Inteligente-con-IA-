@@ -151,6 +151,36 @@ El proyecto dura 73 dias
 
 # 4. El recorrido hacia atrás y la holgura
 
+Cálculo del fin más tardío ($LF$), inicio más tardío ($LS$) y holgura ($H = LS - ES$) recorriendo la red desde el día 73:
+
+| Código | Tarea | Duración | ES | EF | LS | LF | Holgura | ¿Ruta Crítica? |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **5.1** | Montaje del circuito | 14 | 0 | 14 | 0 | 14 | **0** | **SÍ** |
+| **5.2** | Gestión de estados | 9 | 14 | 23 | 14 | 23 | **0** | **SÍ** |
+| **5.3** | Comunicación wifi | 8 | 14 | 22 | 29 | 37 | **15** | NO |
+| **5.4** | Pausa por pérdida de conexión | 7 | 22 | 29 | 62 | 69 | **40** | NO |
+| **1.1** | Registro de acciones y eventos | 8 | 23 | 31 | 23 | 31 | **0** | **SÍ** |
+| **1.2** | Almacenamiento de registros | 9 | 31 | 40 | 36 | 45 | **5** | NO |
+| **2.1** | Diseño interfaz gráfica | 14 | 0 | 14 | 23 | 37 | **23** | NO |
+| **2.3** | Sincronización mando-web | 12 | 22 | 34 | 37 | 49 | **15** | NO |
+| **2.2** | Notif. maniobras contradictorias | 6 | 34 | 40 | 63 | 69 | **29** | NO |
+| **2.4** | Notif. giros sin direccional | 8 | 34 | 42 | 61 | 69 | **27** | NO |
+| **4.1** | Mapeo y modelo de errores | 14 | 31 | 45 | 31 | 45 | **0** | **SÍ** |
+| **4.2** | Registro de errores de conducción | 10 | 45 | 55 | 45 | 55 | **0** | **SÍ** |
+| **4.3** | Registro de recomendaciones | 10 | 45 | 55 | 54 | 64 | **9** | NO |
+| **3.1** | Reportes de errores por estudiante | 6 | 55 | 61 | 55 | 61 | **0** | **SÍ** |
+| **3.2** | Recomendaciones de mejora | 5 | 55 | 60 | 64 | 69 | **9** | NO |
+| **3.3** | Consulta por sesión y estudiante | 8 | 61 | 69 | 61 | 69 | **0** | **SÍ** |
+| **6.1** | Reuniones | 6 | 0 | 6 | 63 | 69 | **63** | NO |
+| **6.2** | Documentación | 12 | 0 | 12 | 57 | 69 | **57** | NO |
+| **6.3** | Seguimiento | 7 | 0 | 7 | 62 | 69 | **62** | NO |
+| **6.4** | Pruebas finales y sustentación | 4 | 69 | 73 | 69 | 73 | **0** | **SÍ** |
+
+---
+
+### Conclusión de holguras
+Las tareas con **holgura cero** (**5.1 → 5.2 → 1.1 → 4.1 → 4.2 → 3.1 → 3.3 → 6.4**) pertenecen a la ruta crítica; cualquier retraso en ellas pospondrá la entrega final de 73 días.
+
 # 5. La ruta crítica
 
 # 6. El cronograma contra el equipo real
