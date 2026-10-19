@@ -1,6 +1,6 @@
 # Cronograma y ruta crítica
 
-1. ## De paquete de trabajo a tarea
+# 1. De paquete de trabajo a tarea
 
 | Código | Nombre | Esfuerzo | Duración |
 | :---- | :---- | :---- | :---- |
@@ -25,7 +25,7 @@
 | 6.3 | Seguimiento  | 14h | 7 días |
 | 6.4 | Sustentación | 20h | 4 días |
 
-2. ## Las dependencias
+# 2. Las dependencias
 
 ```
 @startuml
@@ -122,7 +122,7 @@ endlegend
 @enduml
 ```
 
-3. ## El recorrido hacia adelante
+# 3. El recorrido hacia adelante
 
 | Tarea | Duración | Predecesoras | ES | EF |
 | ----- | ----- | ----- | ----- | ----- |
@@ -149,10 +149,10 @@ endlegend
 
 El proyecto dura 73 dias
 
-4. ## El recorrido hacia atrás y la holgura
+# 4. El recorrido hacia atrás y la holgura
 
-5. ## La ruta crítica
+# 5. La ruta crítica
 
-6. ## El cronograma contra el equipo real
+# 6. El cronograma contra el equipo real
 
-7. ## Hitos y línea base
+# 7. Hitos y línea base
