@@ -304,4 +304,21 @@ endlegend
 
 # 6. El cronograma contra el equipo real
 
+El cruce de la matriz de asignación de responsabilidades (RACI/OBS) con las fechas de inicio y fin temprano ($ES - EF$) del cronograma permite identificar y resolver conflictos de sobreasignación mediante la nivelación de recursos.
+
+### Identificación de sobreasignaciones y resolución
+
+1. **Vanessa (Hardware / Frontend):**
+   * **Conflicto:** Tenía asignadas en paralelo **5.1 Montaje del circuito** (días 0 a 14) y **2.1 Diseño interfaz gráfica** (días 0 a 14).
+   * **Resolución:** Aprovechando los **23 días de holgura** de la tarea **2.1**, se reprograma su inicio para el día 14 (desplazada al intervalo días 14 a 28).
+
+2. **Alejandra (Interfaz / Alertas):**
+   * **Conflicto:** Solapamiento entre **2.2 Notificación de maniobras contradictorias** (días 34 a 40) y **2.4 Notificación de giros sin direccional** (días 34 a 42).
+   * **Resolución:** Al contar con holguras superiores a 25 días, se secuencian para ejecutarse entre los días 34 y 48.
+
+3. **David (Integración / IA):**
+   * **Conflicto:** Solapamiento entre **4.1 Mapeo de errores de IA** (días 31 a 45, Ruta Crítica) y **5.4 Pausa por pérdida de conexión** (días 22 a 29).
+   * **Resolución:** Se desplaza la ejecución de **5.4** (holgura de 40 días) para iniciar después del día 45, garantizando la dedicación exclusiva a la tarea de la ruta crítica.
+
+
 # 7. Hitos y línea base
