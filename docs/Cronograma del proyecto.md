@@ -183,6 +183,125 @@ Las tareas con **holgura cero** (**5.1 → 5.2 → 1.1 → 4.1 → 4.2 → 3.1 �
 
 # 5. La ruta crítica
 
+```
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam defaultFontSize 10
+skinparam ArrowColor #888888
+skinparam linetype ortho
+
+skinparam rectangle {
+  BackgroundColor #1f2a3a
+  BorderColor #5aa0ff
+  FontColor white
+  RoundCorner 8
+}
+
+skinparam rectangle<<crit>> {
+  BackgroundColor #4a2a2e
+  BorderColor #ff6b6b
+}
+
+title Diagrama de red – Dependencias ajustadas (EDT)\nRuta crítica en rojo: 73 días
+
+rectangle "Inicio" as INI
+
+rectangle "5.1 Montaje del circuito\nES | Dur | EF\n0 | 14 | 14\nLS | Holg | LF\n0 | 0 | 14" as T51 <<crit>>
+
+rectangle "5.2 Gestión de estados\nES | Dur | EF\n14 | 9 | 23\nLS | Holg | LF\n14 | 0 | 23" as T52 <<crit>>
+
+rectangle "5.3 Comunicación wifi\nES | Dur | EF\n14 | 8 | 22\nLS | Holg | LF\n29 | 15 | 37" as T53
+
+rectangle "5.4 Pausa por pérdida de conexión\nES | Dur | EF\n22 | 7 | 29\nLS | Holg | LF\n62 | 40 | 69" as T54
+
+rectangle "1.1 Registro de acciones y eventos\nES | Dur | EF\n23 | 8 | 31\nLS | Holg | LF\n23 | 0 | 31" as T11 <<crit>>
+
+rectangle "1.2 Almacenamiento de registros\nES | Dur | EF\n31 | 9 | 40\nLS | Holg | LF\n36 | 5 | 45" as T12
+
+rectangle "2.1 Diseño de interfaz gráfica\nES | Dur | EF\n0 | 14 | 14\nLS | Holg | LF\n23 | 23 | 37" as T21
+
+rectangle "2.2 Notificaciones de maniobras contradictorias\nES | Dur | EF\n34 | 6 | 40\nLS | Holg | LF\n63 | 29 | 69" as T22
+
+rectangle "2.3 Sincronización mando-web\nES | Dur | EF\n22 | 12 | 34\nLS | Holg | LF\n37 | 15 | 49" as T23
+
+rectangle "2.4 Notificación de giros sin direccional\nES | Dur | EF\n34 | 8 | 42\nLS | Holg | LF\n61 | 27 | 69" as T24
+
+rectangle "4.1 Mapeo y modelo de errores\nES | Dur | EF\n31 | 14 | 45\nLS | Holg | LF\n31 | 0 | 45" as T41 <<crit>>
+
+rectangle "4.2 Registro de errores de conducción\nES | Dur | EF\n45 | 10 | 55\nLS | Holg | LF\n45 | 0 | 55" as T42 <<crit>>
+
+rectangle "4.3 Registro de recomendaciones\nES | Dur | EF\n45 | 10 | 55\nLS | Holg | LF\n54 | 9 | 64" as T43
+
+rectangle "3.1 Reportes de errores por estudiante\nES | Dur | EF\n55 | 6 | 61\nLS | Holg | LF\n55 | 0 | 61" as T31 <<crit>>
+
+rectangle "3.2 Recomendaciones de mejora\nES | Dur | EF\n55 | 5 | 60\nLS | Holg | LF\n64 | 9 | 69" as T32
+
+rectangle "3.3 Consulta por sesión y estudiante\nES | Dur | EF\n61 | 8 | 69\nLS | Holg | LF\n61 | 0 | 69" as T33 <<crit>>
+
+rectangle "6.1 Reuniones\nES | Dur | EF\n0 | 6 | 6\nLS | Holg | LF\n63 | 63 | 69" as T61
+
+rectangle "6.2 Documentación\nES | Dur | EF\n0 | 12 | 12\nLS | Holg | LF\n57 | 57 | 69" as T62
+
+rectangle "6.3 Seguimiento\nES | Dur | EF\n0 | 7 | 7\nLS | Holg | LF\n62 | 62 | 69" as T63
+
+rectangle "6.4 Pruebas finales y sustentación\nES | Dur | EF\n69 | 4 | 73\nLS | Holg | LF\n69 | 0 | 73" as T64 <<crit>>
+
+' Inicio y tareas sin predecesoras
+INI -[#ff6b6b,thickness=2]-> T51
+INI --> T21
+INI --> T61
+INI --> T62
+INI --> T63
+
+' Paquete 5
+T51 -[#ff6b6b,thickness=2]-> T52
+T51 --> T53
+T53 --> T54
+
+' Paquete 1 y 4
+T52 -[#ff6b6b,thickness=2]-> T11
+T11 --> T12
+T11 -[#ff6b6b,thickness=2]-> T41
+T12 --> T42
+T41 -[#ff6b6b,thickness=2]-> T42
+T41 --> T43
+
+' Paquete 2
+T21 --> T23
+T53 --> T23
+T21 --> T22
+T23 --> T22
+T21 --> T24
+T23 --> T24
+
+' Paquete 3
+T42 -[#ff6b6b,thickness=2]-> T31
+T43 --> T32
+T12 --> T33
+T31 -[#ff6b6b,thickness=2]-> T33
+
+' Cierre
+T22 --> T64
+T24 --> T64
+T54 --> T64
+T32 --> T64
+T61 --> T64
+T62 --> T64
+T63 --> T64
+T33 -[#ff6b6b,thickness=2]-> T64
+
+legend bottom
+  ES = Inicio temprano | EF = Fin temprano
+  LS = Inicio tardío | LF = Fin tardío
+  Dur = Duración | Holg = Holgura
+  Ruta crítica: 5.1 → 5.2 → 1.1 → 4.1 → 4.2 → 3.1 → 3.3 → 6.4
+  14 + 9 + 8 + 14 + 10 + 6 + 8 + 4 = 73 días
+endlegend
+
+@enduml
+```
+
 # 6. El cronograma contra el equipo real
 
 # 7. Hitos y línea base
