@@ -322,3 +322,59 @@ El cruce de la matriz de asignación de responsabilidades (RACI/OBS) con las fec
 
 
 # 7. Hitos y línea base
+
+## 7.1. Hitos del proyecto
+
+| Código | Hito | Criterio de cumplimiento | Día estimado |
+| :--- | :--- | :--- | :---: |
+| H1 | Montaje del circuito finalizado | El circuito se encuentra montado y preparado para las pruebas de funcionamiento. | 14 |
+| H2 | Gestión de estados implementada | El sistema puede gestionar los estados necesarios para el funcionamiento del circuito. | 23 |
+| H3 | Registro de acciones y eventos completado | El sistema registra las acciones y eventos generados durante la conducción. | 31 |
+| H4 | Modelo de detección de errores completado | Se encuentran definidas las categorías y reglas para identificar errores de conducción. | 45 |
+| H5 | Registro de errores de conducción finalizado | Los errores detectados pueden registrarse para su posterior consulta. | 55 |
+| H6 | Reportes de errores por estudiante disponibles | Es posible consultar los errores asociados a cada estudiante. | 61 |
+| H7 | Consultas por sesión y estudiante implementadas | El sistema permite consultar la información correspondiente a las sesiones y los estudiantes. | 69 |
+| H8 | Pruebas finales y sustentación completadas | Se verifica el funcionamiento general del sistema y se realiza la sustentación del proyecto. | 73 |
+
+Los días indicados corresponden al cronograma calculado mediante el método de la ruta crítica, tomando el día 0 como inicio del proyecto.
+
+## 7.2. Línea base del cronograma
+
+La línea base se establece con los siguientes parámetros:
+
+| Elemento | Línea base establecida |
+| :--- | :--- |
+| Duración total planificada | 73 días |
+| Inicio del proyecto | Día 0 |
+| Finalización planificada | Día 73 |
+| Método de planificación | Método de la ruta crítica (CPM) |
+| Actividades totales | 20 tareas |
+| Ruta crítica | 5.1 → 5.2 → 1.1 → 4.1 → 4.2 → 3.1 → 3.3 → 6.4 |
+| Holgura de las actividades críticas | 0 días |
+
+### Actividades que conforman la ruta crítica
+
+| Código | Actividad | Duración | Inicio planificado | Fin planificado |
+| :--- | :--- | :---: | :---: | :---: |
+| 5.1 | Montaje del circuito | 14 días | 0 | 14 |
+| 5.2 | Gestión de estados | 9 días | 14 | 23 |
+| 1.1 | Registro de acciones y eventos | 8 días | 23 | 31 |
+| 4.1 | Mapeo y modelo de detección de errores | 14 días | 31 | 45 |
+| 4.2 | Registro de errores de conducción | 10 días | 45 | 55 |
+| 3.1 | Reportes de errores por estudiante | 6 días | 55 | 61 |
+| 3.3 | Consulta por sesión y estudiante | 8 días | 61 | 69 |
+| 6.4 | Pruebas finales y sustentación | 4 días | 69 | 73 |
+
+## 7.3. Seguimiento y control de la línea base
+
+Se utilizarán los siguientes indicadores de control:
+
+- **Avance planificado:** porcentaje de trabajo que debería estar terminado según la línea base.
+- **Avance real:** porcentaje de trabajo efectivamente completado.
+- **Desviación del cronograma:** diferencia entre el avance planificado y el avance real, o entre las fechas previstas y las reales.
+- **Cumplimiento de hitos:** verificación de que cada hito se alcance en el día establecido.
+- **Control de la ruta crítica:** seguimiento prioritario de las actividades con holgura cero, debido a que cualquier retraso en ellas puede afectar la fecha final del proyecto.
+
+Si se presentan retrasos, se evaluará la posibilidad de reorganizar las actividades no críticas, aprovechando sus holguras disponibles, sin modificar las dependencias necesarias ni comprometer la calidad del producto final.
+
+La línea base solo deberá modificarse cuando exista una justificación y se apruebe formalmente el cambio. De esta manera, será posible mantener un punto de referencia confiable para evaluar el desempeño y el cumplimiento de los objetivos del proyecto.
